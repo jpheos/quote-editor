@@ -1,3 +1,5 @@
+# config/initializers/simple_form.rb
+
 SimpleForm.setup do |config|
   # Wrappers configration
   config.wrappers :default, class: "form__group" do |b|
