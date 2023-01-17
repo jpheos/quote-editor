@@ -1,7 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+quotes = 15.times.map do
+  quote = nil
+  while quote.nil? || quote.size > 60
+    quote = Faker::Quotes::Shakespeare.hamlet_quote
+  end
+  quote
+end
+
+Quote.delete_all
+
+quotes.uniq.first(6).each do |quote|
+  Quote.create!(name: quote)
+end
+
+ap "Seed ok 👌"

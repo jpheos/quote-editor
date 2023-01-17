@@ -77,3 +77,5 @@ end
 gem "awesome_print", "~> 1.9"
 
 gem "simple_form", "~> 5.1"
+
+gem "faker", "~> 3.1"
